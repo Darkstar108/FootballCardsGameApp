@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">FootballCardGame</string>
+    <string name="home_title">FootballCardGame</string>
+    <string name="play_game_button_title">Play Game</string>
+    <string name="player_list_button_title">Player List</string>
+    <string name="player_card_position">Position</string>
+    <string name="player_card_nationality">Nationality</string>
+    <string name="player_card_name">Firstname Lastname</string>
+    <string name="player_card_age">Age</string>
+    <string name="player_card_rating">80</string>
+    <string name="player_card_attack">Attack</string>
+    <string name="player_card_midfield">Midfield</string>
+    <string name="player_card_defence">Defence</string>
+    <string name="delete_player_button_title">Delete Player</string>
+    <string name="edit_player_button_title">Edit Player</string>
 </resources>

@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/prarai1/Desktop/Programs/AndroidTraining/AndroidProjects/FootballCardsGame/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/prarai1/Desktop/Programs/AndroidTraining/AndroidProjects/FootballCardsGame/app/src/main/res/layout/activity_player_database.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/prarai1/Desktop/Programs/AndroidTraining/AndroidProjects/FootballCardsGame/app/src/main/res/layout/player_card.xml" value="0.4" />
         <entry key="..\:/Users/prarai1/Desktop/Programs/AndroidTraining/AndroidProjects/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/prarai1/Desktop/Programs/AndroidTraining/AndroidProjects/app/src/main/res/layout/activity_splash_screen.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/prarai1/Desktop/Programs/AndroidTraining/AndroidProjects/app/src/main/res/layout/player_card.xml" value="0.20854700854700856" />

@@ -1,6 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="@d"
+    android:background="@color/light_grey">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/player_card_image"
+            android:layout_width="@dimen/player_card_image_size"
+            android:layout_height="@dimen/player_card_image_size"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/player_card_image" />
+
+        <TextView
+            android:id="@+id/player_card_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/player_card_text_margin"
+            android:text="@string/player_card_name"
+            android:textSize="@dimen/player_card_name_font_size"
+            app:layout_constraintStart_toEndOf="@+id/player_card_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/player_card_nationality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/player_card_text_margin"
+            android:layout_marginTop="@dimen/player_card_text_margin"
+            android:text="@string/player_card_nationality"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintStart_toEndOf="@+id/player_card_image"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_name" />
+
+        <TextView
+            android:id="@+id/player_card_age_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/player_card_text_margin"
+            android:layout_marginTop="@dimen/player_card_text_margin_small"
+            android:text="@string/player_card_age"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/player_card_image"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_nationality" />
+
+        <TextView
+            android:id="@+id/player_card_position_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/player_card_position_margin_left"
+            android:layout_marginTop="@dimen/player_card_text_margin_small"
+            android:text="@string/player_card_position"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintStart_toEndOf="@+id/player_card_age_title"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_nationality" />
+
+        <TextView
+            android:id="@+id/player_card_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/player_card_text_margin"
+            android:text="@string/player_card_age"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintStart_toEndOf="@+id/player_card_image"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_age_title" />
+
+        <TextView
+            android:id="@+id/player_card_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/player_card_position_margin_left"
+            android:text="@string/player_card_position"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintStart_toEndOf="@+id/player_card_age"
+            app:layout_constraintTop_toTopOf="@+id/player_card_age" />
+
+        <TextView
+            android:id="@+id/player_card_attack_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_card_attack"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toStartOf="@+id/player_card_midfield_title"
+            app:layout_constraintStart_toEndOf="@+id/player_card_image"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_attack" />
+
+        <TextView
+            android:id="@+id/player_card_midfield_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_card_midfield"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toStartOf="@+id/player_card_defence_title"
+            app:layout_constraintStart_toEndOf="@+id/player_card_attack_title"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_midfield" />
+
+        <TextView
+            android:id="@+id/player_card_defence_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_card_defence"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/player_card_midfield_title"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_defence" />
+
+        <TextView
+            android:id="@+id/player_card_attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/player_card_text_margin"
+            android:text="@string/player_card_rating"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toStartOf="@+id/player_card_midfield"
+            app:layout_constraintStart_toEndOf="@+id/player_card_image"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_age" />
+
+        <TextView
+            android:id="@+id/player_card_midfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/player_card_text_margin"
+            android:text="@string/player_card_rating"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toStartOf="@+id/player_card_defence"
+            app:layout_constraintStart_toEndOf="@+id/player_card_attack"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_age" />
+
+        <TextView
+            android:id="@+id/player_card_defence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/player_card_text_margin"
+            android:text="@string/player_card_rating"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/player_card_midfield"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_age" />
+
+        <Button
+            android:id="@+id/edit_player_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/player_card_text_margin"
+            android:background="@color/teal"
+            android:text="@string/edit_player_button_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toStartOf="@+id/delete_player_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_image" />
+
+        <Button
+            android:id="@+id/delete_player_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/player_card_text_margin"
+            android:background="@color/teal"
+            android:text="@string/delete_player_button_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/player_card_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edit_player_button"
+            app:layout_constraintTop_toBottomOf="@+id/player_card_image" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
