@@ -13,4 +13,5 @@
     <string name="player_card_defence">Defence</string>
     <string name="delete_player_button_title">Delete Player</string>
     <string name="edit_player_button_title">Edit Player</string>
+    <string name="search_bar_hint">Search for Player</string>
 </resources>

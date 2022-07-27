@@ -6,7 +6,7 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@d"
+    android:layout_margin="@dimen/player_card_text_margin"
     android:background="@color/light_grey">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/player_card_text_margin"
             android:text="@string/player_card_name"
+            android:textColor="@color/black"
             android:textSize="@dimen/player_card_name_font_size"
             app:layout_constraintStart_toEndOf="@+id/player_card_image"
             app:layout_constraintTop_toTopOf="parent" />

@@ -12,18 +12,18 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val playGameButton: Button = findViewById(R.id.gameButton)
-        val playerListButton: Button = findViewById(R.id.playerListButton)
+        val playGameButton: Button = findViewById(R.id.home_game_button)
+        val playerListButton: Button = findViewById(R.id.home_player_list_button)
         playGameButton.setOnClickListener(this)
         playerListButton.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
         when(view?.id) {
-            R.id.gameButton -> {
+            R.id.home_game_button -> {
 
             }
-            R.id.playerListButton -> {
+            R.id.home_player_list_button -> {
                 val playerListintent = Intent(baseContext, PlayerListActivity::class.java)
                 startActivity(playerListintent)
             }
