@@ -11,6 +11,14 @@
     <dimen name="home_margin_top">100dp</dimen>
     <dimen name="splash_screen_progress_bar_margin">25dp</dimen>
 
+    <dimen name="profile_title_font_size">30sp</dimen>
+    <dimen name="profile_margin_top">40dp</dimen>
+
+    <dimen name="about_title_font_size">30sp</dimen>
+    <dimen name="about_text_font_size">20sp</dimen>
+    <dimen name="about_margin_top">40dp</dimen>
+    <dimen name="about_text_margin_horizontal">20dp</dimen>
+
     <dimen name="player_card_font_size">14sp</dimen>
     <dimen name="player_card_name_font_size">18sp</dimen>
     <dimen name="player_card_image_size">150dp</dimen>

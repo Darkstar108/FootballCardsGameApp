@@ -33,4 +33,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_about">About</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_title">Profile</string>
+    <string name="about_title">About</string>
+    <string name="about_text">FootballCardGame is a basic game that involves playing against an AI in rounds of battles where you pit your player card against the AI\'s player card in certain categories like Attack, Midfield and Defence. The winner of each round gets to keep the loser\'s card and the game ends when the loser has no more cards at their disposal</string>
 </resources>

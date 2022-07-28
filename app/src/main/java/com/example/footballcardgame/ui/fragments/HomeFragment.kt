@@ -1,16 +1,18 @@
 package com.example.footballcardgame.ui.fragments
 
-import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import com.example.footballcardgame.R
+import com.example.footballcardgame.common.Utils.replaceFragment
 import com.example.footballcardgame.databinding.FragmentHomeBinding
-import com.example.footballcardgame.ui.activities.PlayerListActivity
 import com.example.footballcardgame.ui.viewModels.HomeViewModel
+
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
@@ -57,8 +59,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
             }
             R.id.home_player_list_button -> {
-//                val playerListintent = Intent(baseContext, PlayerListActivity::class.java)
-//                startActivity(playerListintent)
+                val playerListFragment = PlayerListFragment.newInstance()
+                fragmentManager?.let { replaceFragment(playerListFragment, it) }
             }
         }
     }
