@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">FootballCardGame</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
     <string name="home_title">FootballCardGame</string>
+
     <string name="play_game_button_title">Play Game</string>
     <string name="player_list_button_title">Player List</string>
+
     <string name="player_card_position">Position</string>
     <string name="player_card_nationality">Nationality</string>
     <string name="player_card_name">Firstname Lastname</string>
@@ -13,5 +18,19 @@
     <string name="player_card_defence">Defence</string>
     <string name="delete_player_button_title">Delete Player</string>
     <string name="edit_player_button_title">Edit Player</string>
+
     <string name="search_bar_hint">Search for Player</string>
+
+    <string name="player_add_screen_title">Customize Player Details</string>
+    <string name="player_add_name_hint">Enter Player\'s Full Name</string>
+    <string name="player_add_nationality_hint">Enter Player\'s Nationality</string>
+    <string name="player_add_age_hint">Enter Player\'s Full Age</string>
+    <string name="player_add_position_hint">Enter Player\'s Full Position</string>
+    <string name="player_add_attack_hint">Enter Player\'s Attack Rating</string>
+    <string name="player_add_midfield_hint">Enter Player\'s Midfield Rating</string>
+    <string name="player_add_defence_hint">Enter Player\'s Defence Rating</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_about">About</string>
 </resources>

@@ -16,7 +16,7 @@
         android:theme="@style/Theme.FootballCardGame"
         tools:targetApi="31">
         <activity
-            android:name=".PlayerAddActivity"
+            android:name=".ui.activities.PlayerAddActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activities.GameActivity"
@@ -27,9 +27,20 @@
         <activity
             android:name=".ui.activities.HomeActivity"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".ui.activities.SplashScreenActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
-            android:name=".ui.activities.SplashScreenActivity"
-            android:exported="true">
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FootballCardGame.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

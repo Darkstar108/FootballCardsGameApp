@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="player_card_font_size">14sp</dimen>
-    <dimen name="player_card_name_font_size">18sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+
     <dimen name="home_title_font_size">40sp</dimen>
     <dimen name="home_button_font_size">26sp</dimen>
     <dimen name="home_margin_top">100dp</dimen>
+    <dimen name="splash_screen_progress_bar_margin">25dp</dimen>
+
+    <dimen name="player_card_font_size">14sp</dimen>
+    <dimen name="player_card_name_font_size">18sp</dimen>
     <dimen name="player_card_image_size">150dp</dimen>
     <dimen name="player_card_text_margin">10dp</dimen>
     <dimen name="player_card_text_margin_small">5dp</dimen>
     <dimen name="player_card_position_margin_left">50dp</dimen>
     <dimen name="player_card_rating_margin">30dp</dimen>
-    <dimen name="splash_screen_progress_bar_margin">25dp</dimen>
+    <dimen name="player_card_paddinmg">10dp</dimen>
+
     <dimen name="search_icon_size">20dp</dimen>
     <dimen name="search_bar_wrappper_padding">20dp</dimen>
     <dimen name="search_bar_font_size">12sp</dimen>
