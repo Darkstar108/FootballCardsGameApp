@@ -31,4 +31,6 @@
     <dimen name="search_icon_size">20dp</dimen>
     <dimen name="search_bar_wrappper_padding">20dp</dimen>
     <dimen name="search_bar_font_size">12sp</dimen>
+
+    <dimen name="add_player_text_margin">10dp</dimen>
 </resources>

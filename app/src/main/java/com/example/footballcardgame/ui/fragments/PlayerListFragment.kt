@@ -1,22 +1,20 @@
 package com.example.footballcardgame.ui.fragments
 
-import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
+import android.app.SearchManager
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.*
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballcardgame.R
 import com.example.footballcardgame.data.models.PlayerDetail
-import com.example.footballcardgame.databinding.FragmentHomeBinding
 import com.example.footballcardgame.databinding.FragmentPlayerListBinding
-import com.example.footballcardgame.ui.activities.PlayerListActivity
 import com.example.footballcardgame.ui.adapters.PlayerListAdapter
 import com.example.footballcardgame.ui.viewModels.HomeViewModel
 
@@ -40,7 +38,40 @@ class PlayerListFragment : Fragment() {
 
         _binding = FragmentPlayerListBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
         return root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main, menu)
+        val searchItem = menu.findItem(R.id.search_bar)
+        val searchView = searchItem.actionView as SearchView
+        val searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+        searchView.apply {
+            // Assumes current activity is the searchable activity
+            setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
+            setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
+        }
+
+        searchView.setOnQueryTextListener(
+            object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    Log.d("footballCardGame", "SearchText: ${newText}")
+                    if (newText != null) {
+                        filterPlayers(newText)
+                    }
+                    return true
+                }
+            }
+        )
+
+
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -67,6 +98,8 @@ class PlayerListFragment : Fragment() {
         binding.playerListRecyclerView.adapter = playerListAdapter
         binding.playerListRecyclerView.setHasFixedSize(true)
 
+        setHasOptionsMenu(true)
+
     }
 
     override fun onDestroyView() {
@@ -90,8 +123,7 @@ class PlayerListFragment : Fragment() {
     }
 
     private fun filterPlayers(query: String) {
-        var filteredPlayerDetails: ArrayList<PlayerDetail> = mutableListOf<PlayerDetail>() as ArrayList<PlayerDetail>
-        filteredPlayerDetails = playerDetails?.filter { it.name.lowercase().contains(query.lowercase()) } as ArrayList<PlayerDetail>
+        var filteredPlayerDetails = playerDetails?.filter { it.name.lowercase().contains(query.lowercase()) } as ArrayList<PlayerDetail>
         Log.d("footballCardGame", "${filteredPlayerDetails.toString()}")
         playerListAdapter?.updateList(filteredPlayerDetails)
     }

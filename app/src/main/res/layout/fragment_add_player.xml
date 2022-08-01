@@ -22,6 +22,8 @@
         android:id="@+id/player_add_name_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/add_player_text_margin"
+        android:layout_marginTop="@dimen/add_player_text_margin"
         android:background="@color/light_grey"
         android:gravity="center"
         android:hint="@string/player_add_name_hint"
@@ -34,24 +36,28 @@
         android:id="@+id/player_add_nationality_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/add_player_text_margin"
+        android:layout_marginTop="@dimen/add_player_text_margin"
         android:background="@color/light_grey"
         android:gravity="center"
-        android:hint="@string/player_add_name_hint"
-        android:inputType="textPersonName"
+        android:hint="@string/player_add_nationality_hint"
+        android:inputType="text"
         android:textSize="@dimen/search_bar_font_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_add_screen_title" />
+        app:layout_constraintTop_toBottomOf="@+id/player_add_name_input" />
 
     <EditText
         android:id="@+id/player_add_age_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/add_player_text_margin"
+        android:layout_marginTop="@dimen/add_player_text_margin"
         android:background="@color/light_grey"
         android:gravity="center"
-        android:hint="@string/player_add_name_hint"
-        android:inputType="textPersonName"
+        android:hint="@string/player_add_age_hint"
+        android:inputType="number"
         android:textSize="@dimen/search_bar_font_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_add_screen_title" />
+        app:layout_constraintTop_toBottomOf="@+id/player_add_nationality_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

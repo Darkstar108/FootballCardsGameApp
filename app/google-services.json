@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "540900522624",
+    "project_id": "footballcardgame-a5c9d",
+    "storage_bucket": "footballcardgame-a5c9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540900522624:android:dac766712b0c1b82014465",
+        "android_client_info": {
+          "package_name": "com.example.footballcardgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540900522624-ka861j6emp95aqa4hfmhcm7d9ub3t1s2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKwKN8MJ4y1P3qHIr2CCVElCK0hdibVvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540900522624-ka861j6emp95aqa4hfmhcm7d9ub3t1s2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
