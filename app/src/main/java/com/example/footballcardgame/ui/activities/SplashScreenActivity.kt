@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import com.example.footballcardgame.MainActivity
 import com.example.footballcardgame.R
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                val homeIntent = Intent(baseContext, HomeActivity::class.java)
+                val homeIntent = Intent(baseContext, MainActivity::class.java)
 
                 splashScreenActivity.startActivity(homeIntent)
                 splashScreenActivity.finish()

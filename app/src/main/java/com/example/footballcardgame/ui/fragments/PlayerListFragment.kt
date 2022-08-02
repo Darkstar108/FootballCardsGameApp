@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.*
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,9 +23,10 @@ class PlayerListFragment : Fragment() {
         fun newInstance() = PlayerListFragment()
     }
 
+    lateinit var playerListViewModel: PlayerListViewModel
     private var _binding: FragmentPlayerListBinding? = null
     private val binding get() = _binding!!
-    private var playerListAdapter: PlayerListAdapter? = null
+    private var playerListAdapter: PlayerListAdapter = PlayerListAdapter()
     private var playerDetails: ArrayList<PlayerDetail>? = null
 
     private lateinit var viewModel: PlayerListViewModel
@@ -72,8 +74,10 @@ class PlayerListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
-        // TODO: Use the ViewModel
+        playerListViewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
+        playerListViewModel.playerDetails.observe(viewLifecycleOwner, Observer {
+            it?.let { playerListAdapter.updateList(it as ArrayList<PlayerDetail>) }
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -87,14 +91,18 @@ class PlayerListFragment : Fragment() {
             PlayerDetail("Cristiano Ronaldo","Portugal","Forward",35,"https://pesdb.net/pes2021/images/players/4522.png",95,55,20),
         )
 
-        binding.playerListRecyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.playerListRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
-        playerListAdapter = PlayerListAdapter(playerDetails!!)
-        binding.playerListRecyclerView.adapter = playerListAdapter
-        binding.playerListRecyclerView.setHasFixedSize(true)
+        Log.d("footballCardGame", "${playerListAdapter.itemCount}")
+        setUpRecyclerView()
 
         setHasOptionsMenu(true)
 
+    }
+
+    private fun setUpRecyclerView() {
+        binding.playerListRecyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.playerListRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+        binding.playerListRecyclerView.adapter = playerListAdapter
+        binding.playerListRecyclerView.setHasFixedSize(true)
     }
 
     override fun onDestroyView() {

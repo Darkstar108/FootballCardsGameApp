@@ -12,7 +12,9 @@ import com.example.footballcardgame.R
 import com.example.footballcardgame.data.models.PlayerDetail
 import com.squareup.picasso.Picasso
 
-class PlayerListAdapter(private var playerDetails: ArrayList<PlayerDetail>): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() {
+class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() {
+
+    private var playerDetails: ArrayList<PlayerDetail> = ArrayList<PlayerDetail>()
 
     inner  class ViewHolder(itemView : View): RecyclerView.ViewHolder(itemView) {
 
