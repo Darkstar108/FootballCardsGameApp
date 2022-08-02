@@ -15,20 +15,6 @@
         android:padding="@dimen/search_bar_wrappper_padding"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/search_bar_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@color/light_grey"
-            android:drawableStart="@drawable/search_icon_smaller"
-            android:hint="@string/search_bar_hint"
-            android:textSize="@dimen/search_bar_font_size"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView

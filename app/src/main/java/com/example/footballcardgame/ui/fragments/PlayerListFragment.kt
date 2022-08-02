@@ -3,8 +3,6 @@ package com.example.footballcardgame.ui.fragments
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.*
 import android.widget.SearchView
@@ -16,7 +14,7 @@ import com.example.footballcardgame.R
 import com.example.footballcardgame.data.models.PlayerDetail
 import com.example.footballcardgame.databinding.FragmentPlayerListBinding
 import com.example.footballcardgame.ui.adapters.PlayerListAdapter
-import com.example.footballcardgame.ui.viewModels.HomeViewModel
+import com.example.footballcardgame.ui.viewModels.PlayerListViewModel
 
 class PlayerListFragment : Fragment() {
 
@@ -29,7 +27,7 @@ class PlayerListFragment : Fragment() {
     private var playerListAdapter: PlayerListAdapter? = null
     private var playerDetails: ArrayList<PlayerDetail>? = null
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: PlayerListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,18 +44,18 @@ class PlayerListFragment : Fragment() {
         inflater.inflate(R.menu.main, menu)
         val searchItem = menu.findItem(R.id.search_bar)
         val searchView = searchItem.actionView as SearchView
-        val searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
-        searchView.apply {
-            // Assumes current activity is the searchable activity
-            setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
-            setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
-        }
+//        searchView.apply {
+//            // Assumes current activity is the searchable activity
+//            setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
+//            setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
+//        }
 
         searchView.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
-                    return true
+                    Log.d("footballCardGame", "SearchText: ${query}")
+                    return false
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
@@ -65,18 +63,16 @@ class PlayerListFragment : Fragment() {
                     if (newText != null) {
                         filterPlayers(newText)
                     }
-                    return true
+                    return false
                 }
             }
         )
 
-
-        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
@@ -91,7 +87,6 @@ class PlayerListFragment : Fragment() {
             PlayerDetail("Cristiano Ronaldo","Portugal","Forward",35,"https://pesdb.net/pes2021/images/players/4522.png",95,55,20),
         )
 
-        binding.searchBarEditText.addTextChangedListener(textWatcher)
         binding.playerListRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.playerListRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
         playerListAdapter = PlayerListAdapter(playerDetails!!)
@@ -105,21 +100,6 @@ class PlayerListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private val textWatcher = object: TextWatcher {
-        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-        }
-
-        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-        }
-
-        override fun afterTextChanged(editable: Editable?) {
-            filterPlayers(editable.toString())
-        }
-
     }
 
     private fun filterPlayers(query: String) {

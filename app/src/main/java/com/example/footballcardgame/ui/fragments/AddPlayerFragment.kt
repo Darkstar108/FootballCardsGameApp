@@ -5,13 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
-import com.example.footballcardgame.R
-import com.example.footballcardgame.common.Utils.replaceFragment
 import com.example.footballcardgame.databinding.FragmentHomeBinding
-import com.example.footballcardgame.ui.viewModels.HomeViewModel
+import com.example.footballcardgame.ui.viewModels.PlayerListViewModel
 
 
 class AddPlayerFragment : Fragment() {
@@ -23,7 +19,7 @@ class AddPlayerFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: PlayerListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +33,7 @@ class AddPlayerFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
