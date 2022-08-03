@@ -32,5 +32,12 @@
     <dimen name="search_bar_wrappper_padding">20dp</dimen>
     <dimen name="search_bar_font_size">12sp</dimen>
 
-    <dimen name="add_player_text_margin">10dp</dimen>
+    <dimen name="add_player_text_margin_start">20dp</dimen>
+    <dimen name="add_player_text_margin_top">5dp</dimen>
+    <dimen name="add_player_button_margin_top">10dp</dimen>
+    <dimen name="add_player_title_margin">50dp</dimen>
+    <dimen name="add_player_button_font_size">14sp</dimen>
+    <dimen name="add_player_title_font_size">24sp</dimen>
+    <dimen name="add_player_font_size">14sp</dimen>
+    <dimen name="add_player_minHeight">50dp</dimen>
 </resources>
