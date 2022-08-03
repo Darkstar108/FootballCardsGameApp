@@ -1,8 +1,6 @@
 
 €
 Papp/src/main/java/com/example/footballcardgame/ui/fragments/AddPlayerFragment.kt,1\5\158ac875313df286283c60a304901222d98f1fc2
-|
-Lapp/src/main/java/com/example/footballcardgame/ui/activities/HomeActivity.kt,8\0\805b6a5616a02088acb9039143f49bfeb62d513d
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 {
@@ -11,8 +9,6 @@ Kapp/src/main/java/com/example/footballcardgame/ui/fragments/HomeFragment.kt,4\
 Kapp/src/main/java/com/example/footballcardgame/data/daos/PlayerDetailDao.kt,a\c\ac35ec59194ca1c67084f33f72e5be2c15ed386e
 n
 >app/src/main/java/com/example/footballcardgame/MainActivity.kt,8\c\8c0ddfe5fcb161c6364b2e532a6600a907c29afb
-n
->app/src/main/java/com/example/footballcardgame/common/Utils.kt,e\7\e7f210c68f512d5def679ee9d25b1c25389268ed
 z
 Japp/src/main/java/com/example/footballcardgame/data/models/PlayerDetail.kt,4\e\4e53cad2492308e910fd98fcbb8375dae053cd58
 ‰
@@ -23,13 +19,7 @@ Zapp/src/main/java/com/example/footballcardgame/data/repositories/PlayerDetailRe
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-ƒ
-Sapp/src/main/java/com/example/footballcardgame/ui/viewModels/PlayerListViewModel.kt,b\6\b63728a003450f0bc154622044b9e84dc34b5471
-
-Oapp/src/main/java/com/example/footballcardgame/ui/adapters/PlayerListAdapter.kt,1\1\1158ca947acf5d1b5ac1e4f5ec2e32083c79aa4d
 „
 Tapp/src/main/java/com/example/footballcardgame/ui/activities/SplashScreenActivity.kt,9\6\96f49afd0fee41d38c2964645c41536429d2ddf4
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-
-Qapp/src/main/java/com/example/footballcardgame/ui/fragments/PlayerListFragment.kt,a\f\af6d961679920634b23ed28cf575664b04d5945d

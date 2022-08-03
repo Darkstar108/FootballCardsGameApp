@@ -10,11 +10,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballcardgame.R
 import com.example.footballcardgame.data.models.PlayerDetail
+import com.example.footballcardgame.ui.viewModels.PlayerListViewModel
 import com.squareup.picasso.Picasso
+import com.example.footballcardgame.common.Constants
 
 class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() {
 
     private var playerDetails: ArrayList<PlayerDetail> = ArrayList<PlayerDetail>()
+    lateinit var playerListViewModel: PlayerListViewModel
 
     inner  class ViewHolder(itemView : View): RecyclerView.ViewHolder(itemView) {
 
@@ -30,12 +33,12 @@ class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() 
         val editPlayerButton: Button = itemView.findViewById(R.id.edit_player_button)
 
         init {
+        }
+
+        fun deletePlayerDetail(playerDetail: PlayerDetail) {
             deletePlayerButton.setOnClickListener {
-                val position = adapterPosition
-                Log.d("footballCardGame", "Deleting player in position:$position")
-                val updatedPlayerDetails = playerDetails
-                updatedPlayerDetails.removeAt(position)
-                updateList(updatedPlayerDetails)
+                Log.d(Constants.LOG_TAG, "Deleting player ${playerDetail}")
+                playerListViewModel.delete(playerDetail)
             }
         }
     }
@@ -56,6 +59,7 @@ class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() 
             playerCardMidfield.text = playerDetails[position].midfield.toString()
             playerCardDefence.text = playerDetails[position].defence.toString()
         }
+        holder.deletePlayerDetail(playerDetails[position])
     }
 
     override fun getItemCount(): Int {
@@ -63,7 +67,12 @@ class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() 
     }
 
     fun updateList(updatedPlayerDetails: ArrayList<PlayerDetail>) {
+        Log.d("footballCardGame", "Updating player list with: ${updatedPlayerDetails}")
         playerDetails = updatedPlayerDetails
         notifyDataSetChanged()
+    }
+
+    fun setViewModel(playerListViewModel: PlayerListViewModel) {
+        this.playerListViewModel = playerListViewModel
     }
 }

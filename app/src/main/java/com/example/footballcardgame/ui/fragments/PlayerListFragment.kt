@@ -29,7 +29,14 @@ class PlayerListFragment : Fragment() {
     private var playerListAdapter: PlayerListAdapter = PlayerListAdapter()
     private var playerDetails: ArrayList<PlayerDetail>? = null
 
-    private lateinit var viewModel: PlayerListViewModel
+    private val playerDetailsObserver = Observer<List<PlayerDetail>> {
+        it?.let { playerListAdapter.updateList(it as ArrayList<PlayerDetail>) }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        playerListViewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,16 +79,10 @@ class PlayerListFragment : Fragment() {
 
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        playerListViewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
-        playerListViewModel.playerDetails.observe(viewLifecycleOwner, Observer {
-            it?.let { playerListAdapter.updateList(it as ArrayList<PlayerDetail>) }
-        })
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        playerListViewModel.playerDetails.observe(viewLifecycleOwner, playerDetailsObserver)
 
         playerDetails = arrayListOf<PlayerDetail>(
             PlayerDetail("Lionel Messi","Argentina","Forward",33,"https://pesdb.net/pes2021/images/players/7511.png",99,85,20),
@@ -91,8 +92,11 @@ class PlayerListFragment : Fragment() {
             PlayerDetail("Cristiano Ronaldo","Portugal","Forward",35,"https://pesdb.net/pes2021/images/players/4522.png",95,55,20),
         )
 
-        Log.d("footballCardGame", "${playerListAdapter.itemCount}")
         setUpRecyclerView()
+
+        for(playerDetail in playerDetails!!) {
+            playerListViewModel.insert(playerDetail)
+        }
 
         setHasOptionsMenu(true)
 
@@ -101,6 +105,7 @@ class PlayerListFragment : Fragment() {
     private fun setUpRecyclerView() {
         binding.playerListRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.playerListRecyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+        playerListAdapter.setViewModel(playerListViewModel)
         binding.playerListRecyclerView.adapter = playerListAdapter
         binding.playerListRecyclerView.setHasFixedSize(true)
     }
@@ -108,10 +113,11 @@ class PlayerListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        playerListViewModel.playerDetails.removeObserver(playerDetailsObserver)
     }
 
     private fun filterPlayers(query: String) {
-        var filteredPlayerDetails = playerDetails?.filter { it.name.lowercase().contains(query.lowercase()) } as ArrayList<PlayerDetail>
+        var filteredPlayerDetails = playerListViewModel.playerDetails.value?.filter { it.name.lowercase().contains(query.lowercase()) } as ArrayList<PlayerDetail>
         Log.d("footballCardGame", "${filteredPlayerDetails.toString()}")
         playerListAdapter?.updateList(filteredPlayerDetails)
     }
