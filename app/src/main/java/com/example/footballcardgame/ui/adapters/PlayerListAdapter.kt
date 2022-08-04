@@ -7,12 +7,15 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballcardgame.R
 import com.example.footballcardgame.data.models.PlayerDetail
 import com.example.footballcardgame.ui.viewModels.PlayerListViewModel
 import com.squareup.picasso.Picasso
 import com.example.footballcardgame.common.Constants
+import com.example.footballcardgame.ui.fragments.PlayerListFragment
+import com.example.footballcardgame.ui.fragments.PlayerListFragmentDirections
 
 class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() {
 
@@ -41,6 +44,14 @@ class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() 
                 playerListViewModel.delete(playerDetail)
             }
         }
+
+        fun editPlayerDetail(playerDetail: PlayerDetail, view: View) {
+            editPlayerButton.setOnClickListener {
+                val action = PlayerListFragmentDirections.actionNavPlayerListToNavAddPlayer()
+                view.findNavController().navigate(action)
+            }
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -60,6 +71,7 @@ class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() 
             playerCardDefence.text = playerDetails[position].defence.toString()
         }
         holder.deletePlayerDetail(playerDetails[position])
+        holder.editPlayerDetail(playerDetails[position], holder.itemView)
     }
 
     override fun getItemCount(): Int {

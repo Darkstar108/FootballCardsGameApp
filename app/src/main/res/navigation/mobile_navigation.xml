@@ -9,7 +9,11 @@
         android:id="@+id/nav_player_list"
         android:name="com.example.footballcardgame.ui.fragments.PlayerListFragment"
         android:label="@string/menu_player_database"
-        tools:layout="@layout/fragment_player_list" />
+        tools:layout="@layout/fragment_player_list" >
+        <action
+            android:id="@+id/action_nav_player_list_to_nav_add_player"
+            app:destination="@id/nav_add_player" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_profile"
@@ -22,4 +26,10 @@
         android:name="com.example.footballcardgame.ui.fragments.AboutFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_add_player"
+        android:name="com.example.footballcardgame.ui.fragments.AddPlayerFragment"
+        android:label="@string/menu_add_player"
+        tools:layout="@layout/fragment_add_player" />
 </navigation>

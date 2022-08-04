@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.footballcardgame.databinding.FragmentAddPlayerBinding
 import com.example.footballcardgame.databinding.FragmentHomeBinding
+import com.example.footballcardgame.ui.viewModels.AddPlayerViewModel
 import com.example.footballcardgame.ui.viewModels.PlayerListViewModel
 
 
@@ -16,25 +18,19 @@ class AddPlayerFragment : Fragment() {
         fun newInstance() = AddPlayerFragment()
     }
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentAddPlayerBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: PlayerListViewModel
+    lateinit var addPlayerViewModel: AddPlayerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentAddPlayerBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
