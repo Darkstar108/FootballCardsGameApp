@@ -35,11 +35,12 @@
     <string name="player_add_defence_radiobutton">Defence</string>
     <string name="player_add_submit_button">Submit Player</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_player_database">Player Database</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_about">About</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_title">Profile</string>
     <string name="about_title">About</string>
-    <string name="about_text">FootballCardGame is a basic game that involves playing against an AI in rounds of battles where you pit your player card against the AI\'s player card in certain categories like Attack, Midfield and Defence. The winner of each round gets to keep the loser\'s card and the game ends when the loser has no more cards at their disposal</string>
+    <string name="about_text_game">FootballCardGame is a basic game that involves playing against an AI in rounds of battles where you pit your player card against the AI\'s player card in certain categories like Attack, Midfield and Defence. The winner of each round gets to keep the loser\'s card and the game ends when the loser has no more cards at their disposal</string>
+    <string name="about_text_database">FootballPlayerDB is a database of football players along with their ratings. Users can view players as well as add, edit or delete players</string>
 </resources>

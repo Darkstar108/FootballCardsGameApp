@@ -13,3 +13,11 @@ Zapp/src/main/java/com/example/footballcardgame/data/repositories/PlayerDetailRe
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 „
 Tapp/src/main/java/com/example/footballcardgame/ui/activities/SplashScreenActivity.kt,9\6\96f49afd0fee41d38c2964645c41536429d2ddf4
+r
+Bapp/src/main/java/com/example/footballcardgame/common/Constants.kt,2\d\2d61fb8d876fa009aa888f30d54d6be59cac80a7
+{
+Kapp/src/main/java/com/example/footballcardgame/data/daos/PlayerDetailDao.kt,a\c\ac35ec59194ca1c67084f33f72e5be2c15ed386e
+n
+>app/src/main/java/com/example/footballcardgame/common/Utils.kt,e\7\e7f210c68f512d5def679ee9d25b1c25389268ed
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
