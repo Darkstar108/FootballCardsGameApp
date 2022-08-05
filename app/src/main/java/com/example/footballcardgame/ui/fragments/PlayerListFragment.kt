@@ -9,15 +9,17 @@ import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballcardgame.R
+import com.example.footballcardgame.common.Utils
 import com.example.footballcardgame.data.models.PlayerDetail
 import com.example.footballcardgame.databinding.FragmentPlayerListBinding
 import com.example.footballcardgame.ui.adapters.PlayerListAdapter
 import com.example.footballcardgame.ui.viewModels.PlayerListViewModel
 
-class PlayerListFragment : Fragment() {
+class PlayerListFragment : Fragment(), View.OnClickListener {
 
     companion object {
         fun newInstance() = PlayerListFragment()
@@ -98,6 +100,8 @@ class PlayerListFragment : Fragment() {
             playerListViewModel.insert(playerDetail)
         }
 
+        val addPlayerFab = binding.addPlayerFab.setOnClickListener(this)
+
         setHasOptionsMenu(true)
 
     }
@@ -120,6 +124,17 @@ class PlayerListFragment : Fragment() {
         var filteredPlayerDetails = playerListViewModel.playerDetails.value?.filter { it.name.lowercase().contains(query.lowercase()) } as ArrayList<PlayerDetail>
         Log.d("footballCardGame", "${filteredPlayerDetails.toString()}")
         playerListAdapter?.updateList(filteredPlayerDetails)
+    }
+
+    override fun onClick(view: View?) {
+        when(view?.id) {
+            R.id.add_player_fab -> {
+                val bundle = Bundle()
+                val dummyPlayer = PlayerDetail("","","",0,"",0,0,0)
+                val action = PlayerListFragmentDirections.actionNavPlayerListToNavAddPlayer(dummyPlayer)
+                view.findNavController().navigate(action)
+            }
+        }
     }
 
 }

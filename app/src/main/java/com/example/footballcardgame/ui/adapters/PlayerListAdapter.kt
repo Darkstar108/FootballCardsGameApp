@@ -47,7 +47,7 @@ class PlayerListAdapter(): RecyclerView.Adapter<PlayerListAdapter.ViewHolder>() 
 
         fun editPlayerDetail(playerDetail: PlayerDetail, view: View) {
             editPlayerButton.setOnClickListener {
-                val action = PlayerListFragmentDirections.actionNavPlayerListToNavAddPlayer()
+                val action = PlayerListFragmentDirections.actionNavPlayerListToNavAddPlayer(playerDetail)
                 view.findNavController().navigate(action)
             }
         }

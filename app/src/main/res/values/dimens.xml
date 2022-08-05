@@ -19,6 +19,9 @@
     <dimen name="about_margin_top">40dp</dimen>
     <dimen name="about_text_margin_horizontal">20dp</dimen>
 
+    <dimen name="player_list_add_player_fab_layout_margin">16dp</dimen>
+    <dimen name="player_list_recycler_view_padding_bottom">50dp</dimen>
+
     <dimen name="player_card_font_size">14sp</dimen>
     <dimen name="player_card_name_font_size">18sp</dimen>
     <dimen name="player_card_image_size">150dp</dimen>

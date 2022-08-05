@@ -31,5 +31,9 @@
         android:id="@+id/nav_add_player"
         android:name="com.example.footballcardgame.ui.fragments.AddPlayerFragment"
         android:label="@string/menu_add_player"
-        tools:layout="@layout/fragment_add_player" />
+        tools:layout="@layout/fragment_add_player">
+        <argument
+            android:name="playerDetail"
+            app:argType="com.example.footballcardgame.data.models.PlayerDetail" />
+    </fragment>
 </navigation>

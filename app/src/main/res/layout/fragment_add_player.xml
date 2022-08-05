@@ -25,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/add_player_text_margin_start"
         android:layout_marginTop="@dimen/add_player_text_margin_top"
-        android:gravity="center"
         android:hint="@string/player_add_name_hint"
         android:inputType="textPersonName"
         android:minHeight="@dimen/add_player_minHeight"
@@ -40,7 +39,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/add_player_text_margin_start"
         android:layout_marginTop="@dimen/add_player_text_margin_top"
-        android:gravity="center"
         android:hint="@string/player_add_nationality_hint"
         android:inputType="text"
         android:minHeight="@dimen/add_player_minHeight"
@@ -55,7 +53,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/add_player_text_margin_start"
         android:layout_marginTop="@dimen/add_player_text_margin_top"
-        android:gravity="center"
         android:hint="@string/player_add_age_hint"
         android:inputType="number"
         android:minHeight="@dimen/add_player_minHeight"
@@ -65,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/player_add_nationality_input" />
 
     <TextView
-        android:id="@+id/player_add_position_input"
+        android:id="@+id/player_add_position_input_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/add_player_text_margin_start"
@@ -74,33 +71,33 @@
         android:textColor="@color/black"
         android:textSize="@dimen/add_player_font_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintBottom_toTopOf="@+id/player_add_position_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player_add_age_input" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/player_add_position_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/add_player_text_margin_start"
         app:layout_constraintBottom_toTopOf="@+id/player_add_attack_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_add_position_input">
+        app:layout_constraintTop_toBottomOf="@+id/player_add_position_input_title">
 
         <RadioButton
-            android:id="@+id/radio_button_1"
+            android:id="@+id/player_add_forward_radio_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/player_add_attack_radiobutton" />
 
         <RadioButton
-            android:id="@+id/radio_button_2"
+            android:id="@+id/player_add_midfielder_radio_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/player_add_midfield_radiobutton" />
 
         <RadioButton
-            android:id="@+id/radio_button_3"
+            android:id="@+id/player_add_defender_radio_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/player_add_defence_radiobutton" />
@@ -112,7 +109,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/add_player_text_margin_top"
         android:layout_marginHorizontal="@dimen/add_player_text_margin_start"
-        android:gravity="center"
         android:hint="@string/player_add_attack_hint"
         android:inputType="number"
         android:minHeight="@dimen/add_player_minHeight"
@@ -121,13 +117,12 @@
         app:layout_constraintEnd_toStartOf="@+id/player_add_midfield_input"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/player_add_position_input" />
 
     <EditText
         android:id="@+id/player_add_midfield_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:hint="@string/player_add_midfield_hint"
         android:inputType="number"
         android:minHeight="@dimen/add_player_minHeight"
@@ -142,7 +137,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/add_player_text_margin_start"
-        android:gravity="center"
         android:hint="@string/player_add_defence_hint"
         android:inputType="number"
         android:minHeight="@dimen/add_player_minHeight"
@@ -157,7 +151,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/add_player_text_margin_start"
-        android:gravity="center"
         android:hint="@string/player_add_imageUrl_hint"
         android:inputType="textUri"
         android:minHeight="@dimen/add_player_minHeight"
