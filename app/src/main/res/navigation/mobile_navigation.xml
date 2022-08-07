@@ -35,5 +35,8 @@
         <argument
             android:name="playerDetail"
             app:argType="com.example.footballcardgame.data.models.PlayerDetail" />
+        <action
+            android:id="@+id/action_nav_add_player_to_nav_player_list"
+            app:destination="@id/nav_player_list" />
     </fragment>
 </navigation>

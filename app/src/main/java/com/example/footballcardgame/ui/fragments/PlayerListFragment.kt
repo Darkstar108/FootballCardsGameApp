@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.*
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -25,7 +26,7 @@ class PlayerListFragment : Fragment(), View.OnClickListener {
         fun newInstance() = PlayerListFragment()
     }
 
-    lateinit var playerListViewModel: PlayerListViewModel
+    private val playerListViewModel: PlayerListViewModel by activityViewModels()
     private var _binding: FragmentPlayerListBinding? = null
     private val binding get() = _binding!!
     private var playerListAdapter: PlayerListAdapter = PlayerListAdapter()
@@ -37,7 +38,6 @@ class PlayerListFragment : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        playerListViewModel = ViewModelProvider(this).get(PlayerListViewModel::class.java)
     }
 
     override fun onCreateView(
