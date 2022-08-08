@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">FootballCardGame</string>
+    <string name="app_name">FootballPlayerDB</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="home_title">FootballCardGame</string>
+    <string name="home_title">FootballPlayerDB</string>
 
     <string name="play_game_button_title">Play Game</string>
     <string name="player_list_button_title">Player List</string>

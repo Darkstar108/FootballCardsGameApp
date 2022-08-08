@@ -73,7 +73,6 @@ class AddPlayerFragment : Fragment(), View.OnClickListener {
             binding.playerAddDefenceInput.setText(args.playerDetail.defence.toString())
         }
 
-        binding.playerAddAttackInput.addTextChangedListener()
 
         binding.playerAddSubmitButton.setOnClickListener(this)
     }

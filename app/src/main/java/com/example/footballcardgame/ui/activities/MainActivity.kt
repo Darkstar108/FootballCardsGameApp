@@ -1,4 +1,4 @@
-package com.example.footballcardgame
+package com.example.footballcardgame.ui.activities
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -14,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.footballcardgame.R
 import com.example.footballcardgame.common.Constants
 import com.example.footballcardgame.databinding.ActivityMainBinding
 import com.example.footballcardgame.ui.fragments.PlayerListFragment

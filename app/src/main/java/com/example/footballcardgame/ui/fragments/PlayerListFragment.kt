@@ -86,21 +86,9 @@ class PlayerListFragment : Fragment(), View.OnClickListener {
 
         playerListViewModel.playerDetails.observe(viewLifecycleOwner, playerDetailsObserver)
 
-        playerDetails = arrayListOf<PlayerDetail>(
-            PlayerDetail("Lionel Messi","Argentina","Forward",33,"https://pesdb.net/pes2021/images/players/7511.png",99,85,20),
-            PlayerDetail("Kevin De Bruyne","Belgium","Midfielder",29,"https://pesdb.net/pes2021/images/players/44379.png",80,95,60),
-            PlayerDetail("Neymar","Brazil","Forward",28,"https://pesdb.net/pes2021/images/players/40352.png",90,75,30),
-            PlayerDetail("Kylian Mbappe","France","Forward",22,"https://pesdb.net/pes2021/images/players/110718.png",95,65,25),
-            PlayerDetail("Cristiano Ronaldo","Portugal","Forward",35,"https://pesdb.net/pes2021/images/players/4522.png",95,55,20),
-        )
-
         setUpRecyclerView()
 
-        for(playerDetail in playerDetails!!) {
-            playerListViewModel.insert(playerDetail)
-        }
-
-        val addPlayerFab = binding.addPlayerFab.setOnClickListener(this)
+        binding.addPlayerFab.setOnClickListener(this)
 
         setHasOptionsMenu(true)
 
