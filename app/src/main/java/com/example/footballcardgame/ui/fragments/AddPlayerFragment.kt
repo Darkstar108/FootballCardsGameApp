@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.footballcardgame.R
+import com.example.footballcardgame.common.Constants
 import com.example.footballcardgame.common.TextValidator
 import com.example.footballcardgame.common.Utils
 import com.example.footballcardgame.data.models.PlayerDetail
@@ -99,11 +100,11 @@ class AddPlayerFragment : Fragment(), View.OnClickListener {
                     binding.playerAddDefenceInput.text.toString().toInt()
                 )
                 if(addEditFlag == AddEditFlag.ADD_PLAYER) {
-                    Log.d("footballCardGame", "Adding: ${playerDetail}")
+                    Log.d(Constants.LOG_TAG, "Adding: ${playerDetail}")
                     playerListViewModel.insert(playerDetail)
                 }
                 else {
-                    Log.d("footballCardGame", "Updating: ${playerDetail}")
+                    Log.d(Constants.LOG_TAG, "Updating: ${playerDetail}")
                     playerListViewModel.update(playerDetail)
                 }
                 val action = AddPlayerFragmentDirections.actionNavAddPlayerToNavPlayerList()

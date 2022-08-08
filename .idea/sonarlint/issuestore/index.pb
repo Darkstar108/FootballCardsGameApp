@@ -17,8 +17,6 @@ n
 >app/src/main/java/com/example/footballcardgame/MainActivity.kt,8\c\8c0ddfe5fcb161c6364b2e532a6600a907c29afb
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 
 Oapp/src/main/java/com/example/footballcardgame/ui/adapters/PlayerListAdapter.kt,1\1\1158ca947acf5d1b5ac1e4f5ec2e32083c79aa4d
 v

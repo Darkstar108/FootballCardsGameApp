@@ -14,6 +14,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballcardgame.R
+import com.example.footballcardgame.common.Constants
 import com.example.footballcardgame.common.Utils
 import com.example.footballcardgame.data.models.PlayerDetail
 import com.example.footballcardgame.databinding.FragmentPlayerListBinding
@@ -65,12 +66,12 @@ class PlayerListFragment : Fragment(), View.OnClickListener {
         searchView.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
-                    Log.d("footballCardGame", "SearchText: ${query}")
+                    Log.d(Constants.LOG_TAG, "SearchText: ${query}")
                     return false
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-                    Log.d("footballCardGame", "SearchText: ${newText}")
+                    Log.d(Constants.LOG_TAG, "SearchText: ${newText}")
                     if (newText != null) {
                         filterPlayers(newText)
                     }
@@ -110,7 +111,7 @@ class PlayerListFragment : Fragment(), View.OnClickListener {
 
     private fun filterPlayers(query: String) {
         var filteredPlayerDetails = playerListViewModel.playerDetails.value?.filter { it.name.lowercase().contains(query.lowercase()) } as ArrayList<PlayerDetail>
-        Log.d("footballCardGame", "${filteredPlayerDetails.toString()}")
+        Log.d(Constants.LOG_TAG, "${filteredPlayerDetails.toString()}")
         playerListAdapter?.updateList(filteredPlayerDetails)
     }
 
